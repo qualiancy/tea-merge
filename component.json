@@ -1,0 +1,15 @@
+{
+    "name": "tea-merge"
+  , "repo": "qualiancy/tea-merge"
+  , "version": "0.0.0"
+  , "description": "Deep object merge utility."
+  , "license": "MIT"
+  , "keywords": [
+    ]
+  , "main": "lib/merge.js"
+  , "scripts": [
+        "lib/merge.js"
+    ]
+  , "dependencies": {}
+  , "development": {}
+}
