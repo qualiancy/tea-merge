@@ -16,6 +16,58 @@
 
     $ component install qualiancy/tea-merge
 
+## Usage
+
+### merge (destination, source, ...)
+
+* **@param** _{Array|Object}_ destination 
+* **@param** _{Array|Object}_ sources ...
+* **@return** _{Object}_  destination merge
+
+For each source, shallow merge its key/values to the
+destination. Sources are read in order, meaning the same
+key in a later source will overwrite the key's value set
+earlier.
+
+Also, this tool only supports objects and arrays. Furthermore,
+the destination and all sources must be of the same type.
+
+```js
+var merge = require('tea-merge');
+
+// sample objects
+var a = { hello: 'universe', arr: [ { a: 'a' } ] }
+  , b = { speak: 'loudly', arr: [ { b: 'b' }, { c: 'c' } };
+
+merge(a, b);
+a.should.deep.equal({
+    hello: 'universe'
+  , speak: 'loudly'
+  , arr: [
+        { a: 'a', b: 'b' }
+      , { c: 'c' }
+    ]
+});
+```
+
+When merging objects, it is expected that if the
+key from the source already exists in the destination,
+the existing value in the source supports the same type of
+iteration as in the destination. If they cannot, a
+`Incompatible merge scenario.` error will be thrown.
+
+##### Rules
+
+- Non-iterable values can be replaced with other
+non-iterable values: strings, numbers, etc.
+- Iterable values cannot replace non-iterable
+values; objects can't replace string, arrays, can't
+replace numbers, etc.
+- Non-iterable values cannot replace iterable
+values; numbers can't replace objects, strings can't
+replace arrays, etc.
+
+
 ## License
 
 (The MIT License)
