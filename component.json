@@ -1,7 +1,7 @@
 {
     "name": "tea-merge"
   , "repo": "qualiancy/tea-merge"
-  , "version": "0.0.0"
+  , "version": "0.1.0"
   , "description": "Deep object merge utility."
   , "license": "MIT"
   , "keywords": [
