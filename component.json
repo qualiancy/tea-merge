@@ -5,11 +5,15 @@
   , "description": "Deep object merge utility."
   , "license": "MIT"
   , "keywords": [
+        "merge"
+      , "utility"
     ]
   , "main": "lib/merge.js"
   , "scripts": [
         "lib/merge.js"
     ]
-  , "dependencies": {}
+  , "dependencies": {
+        "qualiancy/tea-type": "0.1.0"
+    }
   , "development": {}
 }
